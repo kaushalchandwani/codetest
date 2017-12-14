@@ -1,0 +1,8 @@
+com\register\test\LoginUserTest.class
+com\register\test\DeleteUsersTest.class
+com\register\test\RegisterUserTest04.class
+com\register\test\RegisterUserTest02.class
+com\register\test\RegisterUserTest.class
+com\register\test\RegisterUserTest03.class
+com\register\test\DeleteUserAccountsTest.class
+com\register\test\VerifyEmailTest.class
