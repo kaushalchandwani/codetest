@@ -3,11 +3,11 @@ formatter.feature({
   "comments": [
     {
       "line": 1,
-      "value": "#Author: your.email@your.domain.com"
+      "value": "#Author: Kaushal.Chandwani@nhs.net"
     },
     {
       "line": 2,
-      "value": "#Keywords Summary :"
+      "value": "#Keywords Summary : Cucumber feature file for user registeration process to NHS account"
     },
     {
       "line": 3,
@@ -75,24 +75,24 @@ formatter.feature({
     }
   ],
   "line": 21,
-  "name": "User Registeration",
+  "name": "User Registration",
   "description": "As I user \r\nI want to register successfully with NHS Account",
-  "id": "user-registeration",
-  "keyword": "Feature",
-  "tags": [
-    {
-      "line": 20,
-      "name": "@web"
-    }
-  ]
+  "id": "user-registration",
+  "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 25,
   "name": "Sign up a new user",
   "description": "",
-  "id": "user-registeration;sign-up-a-new-user",
+  "id": "user-registration;sign-up-a-new-user",
   "type": "scenario_outline",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 24,
+      "name": "@web"
+    }
+  ]
 });
 formatter.step({
   "line": 26,
@@ -101,7 +101,7 @@ formatter.step({
 });
 formatter.step({
   "line": 27,
-  "name": "he click on register link",
+  "name": "he click on register link for registration page navigation",
   "keyword": "When "
 });
 formatter.step({
@@ -133,7 +133,7 @@ formatter.examples({
   "line": 34,
   "name": "",
   "description": "",
-  "id": "user-registeration;sign-up-a-new-user;",
+  "id": "user-registration;sign-up-a-new-user;",
   "rows": [
     {
       "cells": [
@@ -142,34 +142,34 @@ formatter.examples({
         "confirmpassword"
       ],
       "line": 35,
-      "id": "user-registeration;sign-up-a-new-user;;1"
+      "id": "user-registration;sign-up-a-new-user;;1"
     },
     {
       "cells": [
-        "testuser114@gmail.com",
+        "testdata23@nhs.net",
         "Welcome123#",
         "Welcome123#"
       ],
       "line": 36,
-      "id": "user-registeration;sign-up-a-new-user;;2"
+      "id": "user-registration;sign-up-a-new-user;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 2826144559,
+  "duration": 3071837653,
   "status": "passed"
 });
 formatter.scenario({
   "line": 36,
   "name": "Sign up a new user",
   "description": "",
-  "id": "user-registeration;sign-up-a-new-user;;2",
+  "id": "user-registration;sign-up-a-new-user;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 20,
+      "line": 24,
       "name": "@web"
     }
   ]
@@ -181,12 +181,12 @@ formatter.step({
 });
 formatter.step({
   "line": 27,
-  "name": "he click on register link",
+  "name": "he click on register link for registration page navigation",
   "keyword": "When "
 });
 formatter.step({
   "line": 28,
-  "name": "he provides the valid emailaddress as \"testuser114@gmail.com\"",
+  "name": "he provides the valid emailaddress as \"testdata23@nhs.net\"",
   "matchedColumns": [
     0
   ],
@@ -222,27 +222,27 @@ formatter.match({
   "location": "RegisterUserTest.the_user_is_on_login_page_of_a_NHS_acoount()"
 });
 formatter.result({
-  "duration": 4857084324,
+  "duration": 2884829849,
   "status": "passed"
 });
 formatter.match({
-  "location": "RegisterUserTest.he_click_on_register_link()"
+  "location": "RegisterUserTest.he_click_on_register_link_for_registration_page_navigation()"
 });
 formatter.result({
-  "duration": 10090958693,
+  "duration": 4804689277,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "testuser114@gmail.com",
+      "val": "testdata23@nhs.net",
       "offset": 39
     }
   ],
   "location": "RegisterUserTest.he_provides_the_valid_emailaddress_as(String)"
 });
 formatter.result({
-  "duration": 2217996810,
+  "duration": 1162445962,
   "status": "passed"
 });
 formatter.match({
@@ -255,7 +255,7 @@ formatter.match({
   "location": "RegisterUserTest.he_provides_the_valid_password_as(String)"
 });
 formatter.result({
-  "duration": 136623197,
+  "duration": 140543648,
   "status": "passed"
 });
 formatter.match({
@@ -268,25 +268,25 @@ formatter.match({
   "location": "RegisterUserTest.he_provides_the_valid_confirm_password_again_as(String)"
 });
 formatter.result({
-  "duration": 104520757,
+  "duration": 82047976,
   "status": "passed"
 });
 formatter.match({
   "location": "RegisterUserTest.he_submit_register_button()"
 });
 formatter.result({
-  "duration": 2849474806,
+  "duration": 2581852966,
   "status": "passed"
 });
 formatter.match({
   "location": "RegisterUserTest.he_should_be_navigated_to_Validate_Email_page()"
 });
 formatter.result({
-  "duration": 126355375,
+  "duration": 112761057,
   "status": "passed"
 });
 formatter.after({
-  "duration": 285734461,
+  "duration": 459945726,
   "status": "passed"
 });
 });

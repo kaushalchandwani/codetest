@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class MessageBox 
 {
-	public static void printMessage(String message) 
+	public static void printMessage(String message, final int milliseconds) 
 	{
 		 JOptionPane opt = new JOptionPane(message, JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{}); // no buttons
 		  final JDialog dlg = opt.createDialog("");
@@ -19,7 +19,7 @@ public class MessageBox
 		          {
 		            try
 		            {
-		              Thread.sleep(7000);
+		              Thread.sleep(milliseconds);
 		              dlg.dispose();
 
 		            }

@@ -2,17 +2,17 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[Navigated to login Page]]>
+      <![CDATA[Navigated to login Page: Sign in to your NHS Account]]>
     </line>
     <line>
-      <![CDATA[Navigated to Register Page]]>
+      <![CDATA[Navigated to Create an NHS account Page]]>
     </line>
     <line>
       <![CDATA[Password Rules displayed]]>
     </line>
     <line>
       <![CDATA[User Credentials for registration:- 
-email: testuser114@gmail.com]]>
+email: testdata23@nhs.net]]>
     </line>
     <line>
       <![CDATA[
@@ -29,43 +29,43 @@ Confirm Password: Welcome123#]]>
       <![CDATA[Verification email sent to user]]>
     </line>
   </reporter-output>
-  <suite name="Test - Suite" duration-ms="23938" started-at="2017-11-30T15:45:03Z" finished-at="2017-11-30T15:45:27Z">
+  <suite name="Test - Suite" duration-ms="15786" started-at="2018-01-25T11:21:41Z" finished-at="2018-01-25T11:21:57Z">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.cucumber.runner.TestRunner@402a079c]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Register_And_Verify_User_Account" duration-ms="23938" started-at="2017-11-30T15:45:03Z" finished-at="2017-11-30T15:45:27Z">
+    <test name="Register_And_Verify_User_Account" duration-ms="15786" started-at="2018-01-25T11:21:41Z" finished-at="2018-01-25T11:21:57Z">
       <class name="com.cucumber.runner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.cucumber.runner.TestRunner@402a079c]" test-instance-name="" name="setUpClass" is-config="true" duration-ms="266" started-at="2017-11-30T15:45:03Z" finished-at="2017-11-30T15:45:03Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.cucumber.runner.TestRunner@402a079c]" test-instance-name="" name="setUpClass" is-config="true" duration-ms="260" started-at="2018-01-25T11:21:41Z" finished-at="2018-01-25T11:21:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="before()[pri:0, instance:com.cucumber.runner.TestRunner@402a079c]" test-instance-name="" name="before" is-config="true" duration-ms="0" started-at="2017-11-30T15:45:03Z" finished-at="2017-11-30T15:45:03Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.cucumber.runner.TestRunner@402a079c]" test-instance-name="" name="before" is-config="true" duration-ms="10" started-at="2018-01-25T11:21:42Z" finished-at="2018-01-25T11:21:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method name="feature" test-instance-name="" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.cucumber.runner.TestRunner@402a079c]" status="PASS" duration-ms="23562" finished-at="2017-11-30T15:45:27Z" started-at="2017-11-30T15:45:03Z" data-provider="features" description="Runs Cucumber Feature">
+        <test-method name="feature" test-instance-name="" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.cucumber.runner.TestRunner@402a079c]" status="PASS" duration-ms="15368" finished-at="2018-01-25T11:21:57Z" started-at="2018-01-25T11:21:42Z" data-provider="features" description="Runs Cucumber Feature">
           <params>
             <param index="0">
               <value>
-                <![CDATA[User Registeration]]>
+                <![CDATA[User Registration]]>
               </value>
             </param>
           </params>
           <reporter-output>
             <line>
-              <![CDATA[Navigated to login Page]]>
+              <![CDATA[Navigated to login Page: Sign in to your NHS Account]]>
             </line>
             <line>
-              <![CDATA[Navigated to Register Page]]>
+              <![CDATA[Navigated to Create an NHS account Page]]>
             </line>
             <line>
               <![CDATA[Password Rules displayed]]>
             </line>
             <line>
               <![CDATA[User Credentials for registration:- 
-email: testuser114@gmail.com]]>
+email: testdata23@nhs.net]]>
             </line>
             <line>
               <![CDATA[
@@ -83,14 +83,14 @@ Confirm Password: Welcome123#]]>
             </line>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="after()[pri:0, instance:com.cucumber.runner.TestRunner@402a079c]" test-instance-name="" name="after" is-config="true" duration-ms="1" started-at="2017-11-30T15:45:27Z" finished-at="2017-11-30T15:45:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- after -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.cucumber.runner.TestRunner@402a079c]" test-instance-name="" name="tearDownClass" is-config="true" duration-ms="21" started-at="2017-11-30T15:45:27Z" finished-at="2017-11-30T15:45:27Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.cucumber.runner.TestRunner@402a079c]" test-instance-name="" name="tearDownClass" is-config="true" duration-ms="18" started-at="2018-01-25T11:21:57Z" finished-at="2018-01-25T11:21:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
+        <test-method status="PASS" signature="after()[pri:0, instance:com.cucumber.runner.TestRunner@402a079c]" test-instance-name="" name="after" is-config="true" duration-ms="0" started-at="2018-01-25T11:21:57Z" finished-at="2018-01-25T11:21:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after -->
       </class> <!-- com.cucumber.runner.TestRunner -->
     </test> <!-- Register_And_Verify_User_Account -->
   </suite> <!-- Test - Suite -->

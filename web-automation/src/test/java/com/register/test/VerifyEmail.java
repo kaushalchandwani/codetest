@@ -1,4 +1,3 @@
-
 /**
  * @author Kaushal Chandwani
  *
@@ -24,17 +23,20 @@ import org.testng.annotations.AfterMethod;
 
 import com.register.config.Constant;
 
-public class VerifyEmailTest 
+public class VerifyEmail
 {
-	  public WebDriver driverEmail;
+	  public static WebDriver driverEmail;
 
-  public void verifyEmail() throws Exception 
+  public static WebDriver verifyEmailLink(WebDriver driver, String recipient) throws Exception 
   {
-	  	System.setProperty("webdriver.chrome.driver", "exe/chromedriver.exe"); //chromedriver.exe set property path
+	  	/*System.setProperty("webdriver.chrome.driver", "exe/chromedriver.exe"); //chromedriver.exe set property path
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--start-maximized");
-		driverEmail = new ChromeDriver(options);
+		driverEmail = new ChromeDriver(options);*/
+	  	driverEmail = driver;
 		
+		recipient = "<" + recipient + ">";
+
 	  	boolean clickVerifyEmail=false;
 		boolean emailSender = false;
 		boolean emailReceiver =false;
@@ -43,21 +45,7 @@ public class VerifyEmailTest
 
 		String verifyPageMessage01="";
 		
-		String url_mailcatcher = "";
-	  	
-	  	if(Constant.environmentVariable.equalsIgnoreCase("local"))
-	  	{
-	  		url_mailcatcher = Constant.url__mailCatcher_local;
-	  	}
-	  	else
-	  	{
-	  		url_mailcatcher = Constant.url__mailCatcher_remote;
-	  	}
-	  	driverEmail.get(url_mailcatcher);
-
-	  	driverEmail.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	  	driverEmail.manage().window().maximize();
-	  	Thread.sleep(2000);
+		
 		
 		
 		if(driverEmail.getTitle().matches("MailCatcher(.*)"))
@@ -103,10 +91,9 @@ public class VerifyEmailTest
 						emailSender = true;
 					}
 					
-						
-					if(emailSender && sColumnValue.matches("<cid.testuser1@gmail.com>"))
+					if(emailSender && sColumnValue.equalsIgnoreCase(recipient))
 					{
-						//System.out.println("\nEmail receipient id: "+ sColumnValue);
+						//System.out.println("\nEmail recipient id: "+ sColumnValue);
 						emailReceiver=true;
 					    
 					}
@@ -158,6 +145,7 @@ public class VerifyEmailTest
 			
 			//get current page
 			String currentPageHandle = driverEmail.getWindowHandle();
+			String pageHandleNew = "";
 			//String pageUrl = driverEmail.getCurrentUrl(); //pageurl
 			//click the link to check 
 			//driverEmail.findElement(By.xpath("xhtml:html/xhtml:body/xhtml:a")).click();
@@ -165,8 +153,7 @@ public class VerifyEmailTest
 
 			//add wait
 			driverEmail.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			driverEmail.manage().window().maximize();
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			
 			List<String> browserTabs = new ArrayList<String> (driverEmail.getWindowHandles());
 			//int tabsTotal=browserTabs.size();
@@ -177,94 +164,33 @@ public class VerifyEmailTest
 				
 				String pageTitle = driverEmail.getTitle().toLowerCase();
 				//verify page title
-				if(pageTitle.contains(("My NHS Account").toLowerCase()))
+				if(pageTitle.contains(("Log in to NHS").toLowerCase()))
+				{
+					
+					//closing driver of current tab
+					pageHandleNew = driverEmail.getWindowHandle();
+					
+					//changes --> driverEmail.close();
+					//switch to old main tab
+					driverEmail.switchTo().window(currentPageHandle);
+					driverEmail.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					Thread.sleep(1000);
+					//driver.get(url_mailcatcher);
+					driverEmail.close();
+					driverEmail.switchTo().window(pageHandleNew);
+					emailConfirmationStatus =true;
+					
+				}
+				else
 				{
 					
 				}
-				if(pageTitle.contains(("NHS Account Management").toLowerCase()))
-				{
-					System.out.println("\nNHS Account Management Page");
-					Reporter.log( "Verified and navigated to  dashboard page ", true );
-					
-					boolean elementStatus = com.register.utility.CheckElement.existsElement(Constant.xpath_dashboardPage_messageBanner,driverEmail);
-					Thread.sleep(1000);
-
-					if(elementStatus)
-					{
-						String DashboardMessage = driverEmail.findElement(By.xpath(Constant.xpath_dashboardPage_messageBanner)).getText();
-						System.out.println("\nWelcome to NHS");
-						Thread.sleep(2000);
-						Reporter.log( "Navigated successfully to Dashboard Page ", true );
-						Reporter.log( DashboardMessage, true );
-
-						
-						
-						//closing driver of current tab
-						driverEmail.close();
-						//switch to old main tab
-						driverEmail.switchTo().window(currentPageHandle);
-						driverEmail.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-						Thread.sleep(1000);
-						//driver.get(url_mailcatcher);
-
-						
-						emailConfirmationStatus =true;
-						
-					}
-					else
-					{
-						//throw new NoSuchElementException("Sorry !!! \n Email verification is unsuccessfull.....");
-					}
-				}
-				else if(pageTitle.contains(("Validate email link expired").toLowerCase()))
-				{
-					Reporter.log( "Validated email link has expired", true );
-					boolean elementStatus = com.register.utility.CheckElement.existsElement(Constant.xpath_validateEmailExpirePage_createAccountLink,driverEmail);
-					Thread.sleep(1000);
-					
-					String DashboardMessage = driverEmail.findElement(By.xpath(Constant.xpath_validateEmailExpirePage_messageBanner)).getText();
-					System.out.println("\nVerify link has expired");
-					Thread.sleep(1000);
-					Reporter.log( "Navigated to expired link info page ", true );
-					Reporter.log( DashboardMessage, true );
-					
-					if(elementStatus)
-					{
-						
-
-						driverEmail.findElement(By.xpath(Constant.xpath_validateEmailExpirePage_createAccountLink)).click();
-						driverEmail.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-						Thread.sleep(1000);
-
-						if(driverEmail.getTitle().equalsIgnoreCase("Log in to NHS"))
-						{
-							Reporter.log( "Create account Link selected, navigated to login page", true );
-
-						}
-						else
-						{
-							throw new NoSuchElementException("Create account link not working");
-						}
-						
-						
-						
-						//closing driver of current tab
-						driverEmail.close();
-						//switch to old main tab
-						driverEmail.switchTo().window(currentPageHandle);
-						driverEmail.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-						Thread.sleep(1000);
-						//driver.get(url_mailcatcher);
-
-						
-						emailConfirmationStatus =true;
-						
-					}
-				}
+				
 
 				if(emailConfirmationStatus)
 				{
 					System.out.println("\n Additional browser tabs closed successfully");
+					
 				}
 				
 				
@@ -273,11 +199,7 @@ public class VerifyEmailTest
 			
 		
 		}
-		System.out.println("\nClosing webdriver......");
-
-	  	driverEmail.get("about:config");
-		//driver.quit();
-	  	driverEmail.close();
+		return driverEmail;
   }
   
   /*
